@@ -1,0 +1,30 @@
+components:
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_1
+  layout_properties: {grid_position: 'MXKPQU,AXWAEZ'}
+  components:
+  - type: Plot
+    properties: {spacing_above: small, spacing_below: small, height: '400', visible: true,
+      tooltip: '', interactive: true}
+    name: plot_2
+    layout_properties: {width: 741}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'RMSE:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'CRNBWE,NEXRLB'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {grid_position: 'CRNBWE,DPYZZG'}
+- type: ColumnPanel
+  properties: {}
+  name: column_panel_1
+  layout_properties: {grid_position: 'CRNBWE,LXMADP'}
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"NEXRLB":10,"DPYZZG":30,"LXMADP":20}'}
+  event_bindings: {show: form_show}

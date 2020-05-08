@@ -1,0 +1,56 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_1
+  layout_properties: {grid_position: 'ALHQWI,MUJNZM'}
+  components:
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {title: date_str, id: JCTZTW, data_key: date_str}
+      - {title: item_id, id: FYWCTW, data_key: item_id}
+      - {title: item_cnt_day, id: BCKZFP, data_key: item_cnt_day}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 5
+      visible: true
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {width: 493.594}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate1}
+      name: repeating_panel_1
+      layout_properties: {}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_1
+  layout_properties: {grid_position: 'PNFCCM,UXKVRL'}
+  components:
+  - type: FileLoader
+    properties: {}
+    name: file_loader_1
+    layout_properties: {grid_position: 'ZDKUWG,SRXHVP'}
+    event_bindings: {change: file_loader_1_change}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'ZDKUWG,NSKKEG'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: DEMO DATA, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'ZDKUWG,CVFJFS'}
+    event_bindings: {click: demo_click}
+is_package: false

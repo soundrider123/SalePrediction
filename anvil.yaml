@@ -1,0 +1,35 @@
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+package_name: SalePrediction
+allow_embedding: false
+name: SalePrediction
+runtime_options: {version: 2, client_version: '3', server_version: python3-full}
+metadata: {}
+startup_form: Main_Form
+native_deps: {head_html: ''}
+db_schema:
+- name: sale
+  id: 52877
+  python_name: sale
+  columns:
+    +Sl+9jZQ8c4=:
+      name: date_str
+      type: string
+      admin_ui: {order: 0, width: 200}
+    6XPb2J+zDgU=:
+      name: item_id
+      type: number
+      admin_ui: {order: 1, width: 200}
+    BbtBhNeWB5Y=:
+      name: item_price
+      type: number
+      admin_ui: {order: 2, width: 200}
+    EyydqozAbPA=:
+      name: item_cnt_day
+      type: number
+      admin_ui: {order: 3, width: 200}
+  access: {python_name: sale, app_id: ISIFB4DJISNUO2ND, server: full, client: full,
+    table_id: 52877}
+renamed: true

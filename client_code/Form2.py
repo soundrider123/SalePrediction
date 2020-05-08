@@ -23,12 +23,17 @@ class Form2(Form2Template):
 
   def file_loader_1_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
+    size = len(file.get_bytes())
+    # alert(size)
+    if size > 100000:
+      alert("Size is bigger than 100kb !!!")
+      return
+    
     dic = anvil.server.call("importcsv", file)
     self.repeating_panel_1.items = dic
     Globals.is_demo = False
     
     pass
-
 
 
 

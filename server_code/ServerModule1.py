@@ -6,7 +6,7 @@ import pandas as pd
 from itertools import product
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.metrics import mean_squared_error
 import datetime
 from io import BytesIO
@@ -42,6 +42,10 @@ def infocsv(filename):
   df_info = df_info.append({'description':'Total months','value':np_array.size},ignore_index=True)
   np_array = pd.unique(df['item_id'])
   df_info = df_info.append({'description':'Total item_id','value':np_array.size},ignore_index=True)
+  value_str = df['date_str'].min()
+  df_info = df_info.append({'description':'Min date_str','value':value_str[0:7]},ignore_index=True)
+  value_str = df['date_str'].max()
+  df_info = df_info.append({'description':'Max date_str','value':value_str[0:7]},ignore_index=True)
   
   return df_info.to_dict(orient="records")
 
@@ -146,7 +150,7 @@ def build_model_task(filename, method):
   anvil.server.task_state['n_complete'] = 6
   regr = RandomForestRegressor(n_estimators=1000, random_state=1)
   if method == "linear":
-    regr = LinearRegression()
+    regr = ExtraTreesRegressor(n_estimators=1000, random_state=1)
     
   anvil.server.task_state['n_complete'] = 7
   regr.fit(X_train, Y_train)  

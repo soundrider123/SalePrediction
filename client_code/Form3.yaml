@@ -36,7 +36,7 @@ components:
   layout_properties: {grid_position: 'ECMHHZ,JOFEEB'}
 - type: RadioButton
   properties: {role: null, selected: false, align: left, tooltip: '', border: '',
-    enabled: true, foreground: '', value: linear, visible: true, text: LinearRegression,
+    enabled: true, foreground: '', value: linear, visible: true, text: ExtraTreesRegressor,
     font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false,
     background: '', bold: false, group_name: radioGroup1, underline: false}
   name: radio_button_2
@@ -81,4 +81,4 @@ components:
 container:
   type: ColumnPanel
   properties: {col_widths: '{}'}
-  event_bindings: {show: form_show}
+  event_bindings: {}

@@ -10,6 +10,20 @@ metadata: {}
 startup_form: Main_Form
 native_deps: {head_html: ''}
 db_schema:
+- name: csvfile
+  id: 55191
+  python_name: csvfile
+  columns:
+    6_hMET2WY9M=:
+      name: filemedia
+      type: media
+      admin_ui: {order: 1, width: 200}
+    FNZ+c77PI9Q=:
+      name: filename
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: csvfile, app_id: ISIFB4DJISNUO2ND, server: full, client: none,
+    table_id: 55191}
 - name: sale
   id: 52877
   python_name: sale

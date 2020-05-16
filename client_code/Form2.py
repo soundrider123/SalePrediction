@@ -11,6 +11,7 @@ class Form2(Form2Template):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
+    
     dic = anvil.server.call('loadcsv',"/sale.csv")
     self.repeating_panel_1.items = dic
 
@@ -19,6 +20,8 @@ class Form2(Form2Template):
     dic = anvil.server.call('loadcsv',"/sale.csv")
     self.repeating_panel_1.items = dic
     Globals.is_demo = True
+    form3 = get_open_form().button_3.tag
+    form3.gridrefresh()
     pass
 
   def file_loader_1_change(self, file, **event_args):
@@ -32,8 +35,16 @@ class Form2(Form2Template):
     dic = anvil.server.call("importcsv", file)
     self.repeating_panel_1.items = dic
     Globals.is_demo = False
-    
+    form3 = get_open_form().button_3.tag
+    form3.gridrefresh()
     pass
+
+  def next_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    get_open_form().button_3.raise_event('click')
+    pass
+
+
 
 
 

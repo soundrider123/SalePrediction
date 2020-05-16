@@ -12,4 +12,10 @@ class Form1(Form1Template):
 
     # Any code you write here will run when the form opens.
 
+  def next_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    get_open_form().button_2.raise_event('click')
+    pass
+
+
 

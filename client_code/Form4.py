@@ -32,7 +32,7 @@ class Form4(Form4Template):
           y = data_lst[i],
           name=str(item_lst[i]),
           marker = go.Marker(
-            color= colors[i]
+            color= colors[i%5]
           )
         )
         plot_data.append(scatter)
@@ -40,6 +40,12 @@ class Form4(Form4Template):
     self.plot_2.data = plot_data
     
     pass
+
+  def next_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    get_open_form().button_5.raise_event('click')
+    pass
+
 
 
 

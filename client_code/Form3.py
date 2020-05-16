@@ -14,7 +14,19 @@ class Form3(Form3Template):
     # Any code you write here will run when the form opens.
     self.button_1.enabled = True  
     self.button_2.enabled = False  
+    
+    filename = "/sale1.csv"
+    dic = anvil.server.call('infocsv',filename)
+    self.repeating_panel_1.items = dic    
 
+  def gridrefresh(self):
+    """This method is called when the column panel is shown on the screen"""
+    filename = "/saletmp.csv"
+    if Globals.is_demo == True:
+      filename = "/sale1.csv"
+    dic = anvil.server.call('infocsv',filename)
+    self.repeating_panel_1.items = dic
+    pass    
 
   def predict_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -35,15 +47,6 @@ class Form3(Form3Template):
     self.button_1.enabled = False
     self.button_2.enabled = True
     
-    pass
-
-  def form_show(self, **event_args):
-    """This method is called when the column panel is shown on the screen"""
-    filename = "/saletmp.csv"
-    if Globals.is_demo == True:
-      filename = "/sale.csv"
-    dic = anvil.server.call('infocsv',filename)
-    self.repeating_panel_1.items = dic
     pass
 
   def stop_click(self, **event_args):

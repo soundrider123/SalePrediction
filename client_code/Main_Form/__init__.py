@@ -38,37 +38,47 @@ class Main_Form(Main_FormTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    form1 = get_open_form().button_1.tag
-    get_open_form().flow_panel_1.clear()
-    get_open_form().flow_panel_1.add_component(form1)    
+    form1 = self.button_1.tag
+    if form1 is None:
+      return
+    self.flow_panel_1.clear()
+    self.flow_panel_1.add_component(form1)    
     pass
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    form2 = get_open_form().button_2.tag
-    get_open_form().flow_panel_1.clear()
-    get_open_form().flow_panel_1.add_component(form2)    
+    form2 = self.button_2.tag
+    if form2 is None:
+      return    
+    self.flow_panel_1.clear()
+    self.flow_panel_1.add_component(form2)    
     pass
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    form3 = get_open_form().button_3.tag
-    get_open_form().flow_panel_1.clear()
-    get_open_form().flow_panel_1.add_component(form3)    
+    form3 = self.button_3.tag
+    if form3 is None:
+      return
+    self.flow_panel_1.clear()
+    self.flow_panel_1.add_component(form3)    
     pass
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    form4 = get_open_form().button_4.tag
-    get_open_form().flow_panel_1.clear()
-    get_open_form().flow_panel_1.add_component(form4)    
+    form4 = self.button_4.tag
+    if form4 is None:
+      return    
+    self.flow_panel_1.clear()
+    self.flow_panel_1.add_component(form4)    
     pass
   
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    form5 = get_open_form().button_5.tag
-    get_open_form().flow_panel_1.clear()
-    get_open_form().flow_panel_1.add_component(form5)    
+    form5 = self.button_5.tag
+    if form5 is None:
+      return    
+    self.flow_panel_1.clear()
+    self.flow_panel_1.add_component(form5)    
     pass
 
 

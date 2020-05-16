@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import datetime
+from io import BytesIO
 
 @anvil.server.callable
 def importcsv(file):
@@ -21,7 +22,14 @@ def importcsv(file):
 
 @anvil.server.callable
 def loadcsv(filename):
-  df = pd.read_csv(filename, delimiter=',')
+  row = app_tables.csvfile.get(filename='sale')
+  with open('/sale1.csv', 'w+') as f:
+    bytes_io = BytesIO(row['filemedia'].get_bytes())
+    byte_str = bytes_io.read()
+    text_obj = byte_str.decode('UTF-8')
+    f.write(text_obj)
+
+  df = pd.read_csv('/sale1.csv', delimiter=',')
   df = df[['date_str','item_id','item_cnt_day']]
   return df.to_dict(orient="records")
 
